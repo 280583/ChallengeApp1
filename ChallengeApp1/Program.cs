@@ -1,80 +1,47 @@
-﻿int  number = 19168;
-string numberAsString = number. ToString();
-char[] letters = numberAsString.ToArray();
+﻿using ChallengeApp1;
 
-int count0 = 0;
-int count1 = 0;
-int count2 = 0;
-int count3 = 0;
-int count4 = 0;
-int count5 = 0;
-int count6 = 0;
-int count7 = 0;
-int count8 = 0;
-int count9 = 0;
+var employee1 = new Employee(name: "Henryk", surname: "komputer", age:40);
+var employee2 = new Employee(name: "anna", surname: "Majka", age: 38);
+var employee3 = new Employee(name: "Kamil", surname: "Kowalski", age: 34);
 
-foreach (char letter in letters)
+var employees = new List<Employee> { employee1, employee2, employee3 };
+
+employee1.AddGrade(10);
+employee1.AddGrade(9);
+employee1.AddGrade(9);
+employee1.AddGrade(10);
+employee1.AddGrade(5);
+
+employee2.AddGrade(10);
+employee2.AddGrade(9);
+employee2.AddGrade(90);
+employee2.AddGrade(10);
+employee2.AddGrade(8);
+
+employee3.AddGrade(10);
+employee3.AddGrade(9);
+employee3.AddGrade(9);
+employee3.AddGrade(10);
+employee3.AddGrade(7);
+
+var employeWithMaxScore = GetEmployeeWithMaxScore(employees);
+
+Console.WriteLine($"Employee with the higheast grade is {employeeWithMaxScore.Name} " +;
+                  $"{employeeWithMaxScore. Surname} - {employeeWithxcore. Result} points");
+
+static Employee GetEmployeeWithMaxScore(List<Employee> emploees)
 {
-    if (letter == '0')
+    var maxResult = 0;
+    Employee employeeWithMaxScore = null!;
+
+    foreach (var employee in employees)
     {
-        count0++;
+        maxResult = Math.Max(employee.Result, maxResult);
+        if (maxResult == employee.Result)
+        {
+            employeeWithMaxScore = employee;
+        }
     }
-    else if (letter == '1')
-    {
-        count1++;
-    }
-    else if (letter == '2')
-    {
-        count2++;
-    }
-    else if (letter == '3')
-    {
-        count3++;
-    }
-    else if (letter == '4')
-    {
-        count4++;
-    }
-    else if (letter == '5')
-    {
-        count5++;
-    }
-    else if (letter == '6')
-    {
-        count6++;
-    }
-    else if (letter == '7')
-    {
-        count7++;
-    }
-    else if (letter == '8')
-    {
-        count8++;
-    }
-    else if (letter == '9')
-    {
-        count9++;
-    }
+
+    retrun employeeWithMaxScore;
 }
-
-Console.WriteLine("Wynik dla liczby:" + number);
-Console.WriteLine("0 => " + count0);
-Console.WriteLine("1 => " + count1);
-Console.WriteLine("2 => " + count2);
-Console.WriteLine("3 => " + count3);
-Console.WriteLine("4 => " + count4);
-Console.WriteLine("5 => " + count5);
-Console.WriteLine("6 => " + count6);
-Console.WriteLine("7 => " + count7);
-Console.WriteLine("8 => " + count8);
-Console.WriteLine("9 => " + count9);
-
-
-
-
-
-
-
-
-
-
